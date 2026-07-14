@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Instrument — Contour Coffeeworks</title>
+<meta name="description" content="Product details, specs, and options.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">C</span>
+      <span class="brand-word">Contour Coffeeworks</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#catalog">Catalog</a>
+      <a href="product.html">The Dripper</a>
+      <a href="cart.html" class="cart-link">
+        Bag <span class="cart-count" data-cart-count>0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="product">
+  <div class="wrap">
+    <div class="product-art">
+      <div id="product-icon" style="max-width:320px;margin:0 auto;"></div>
+    </div>
+
+    <div class="product-info">
+      <span class="eyebrow" id="product-catno">No. 000</span>
+      <h1 class="product-title" id="product-name">Loading…</h1>
+      <div class="product-price" id="product-price">$0.00</div>
+      <p class="product-desc" id="product-desc"></p>
+
+      <div id="variant-groups"></div>
+
+      <div id="dial-block" class="dial-block" style="display:none;">
+        <span class="option-label">Grind guide</span>
+        <p class="dial-sub">Drag the dial to see the recommended grind range for this dripper.</p>
+        <div class="dial-wrap">
+          <svg class="dial-face" id="dial-face" viewBox="0 0 132 132">
+            <circle class="dial-track" cx="66" cy="66" r="52"/>
+            <path class="dial-arc" id="dial-arc" d="" />
+            <g class="dial-needle" id="dial-needle">
+              <line x1="66" y1="66" x2="66" y2="20" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="66" cy="66" r="6" fill="var(--ink)"/>
+            </g>
+          </svg>
+          <div class="dial-readout">
+            <div class="grind-name" id="grind-name">Medium-Fine</div>
+            <div class="grind-desc" id="grind-desc">The sweet spot for a 3–4 minute pour-over.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qty-row">
+        <span class="option-label" style="margin:0;">Qty</span>
+        <div class="stepper">
+          <button type="button" id="qty-minus" aria-label="Decrease quantity">−</button>
+          <span id="qty-value">1</span>
+          <button type="button" id="qty-plus" aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+
+      <div class="add-row">
+        <button class="btn btn-ember" id="add-to-cart">Add to bag</button>
+        <a href="cart.html" class="btn btn-outline">View bag</a>
+      </div>
+      <div class="add-note" id="add-note"></div>
+
+      <div class="spec-sheet">
+        <h4>Spec sheet</h4>
+        <div id="spec-rows"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Contour Coffeeworks — a demo storefront.</span>
+    <span>Static front-end · no real payments processed</span>
+  </div>
+</footer>
+
+<script src="js/icons.js"></script>
+<script src="js/store.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>
