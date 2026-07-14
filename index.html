@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contour Coffeeworks — Instruments for pour-over coffee</title>
+<meta name="description" content="Precision brewing instruments for pour-over coffee: drippers, kettles, grinders, and the small tools that make a good cup repeatable.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">C</span>
+      <span class="brand-word">Contour Coffeeworks</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#catalog">Catalog</a>
+      <a href="product.html">The Dripper</a>
+      <a href="cart.html" class="cart-link">
+        Bag <span class="cart-count" data-cart-count>0</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">Instruments, Catalog No. 002–052</span>
+      <h1>Brewing gear built to be understood, not just used.</h1>
+      <p class="lede">Five instruments, each with one job and a spec sheet to back it up. No seasonal drops, no seventeen colorways — just the tools a pour-over needs, made to last past the next kitchen remodel.</p>
+      <div class="hero-cta">
+        <a href="product.html" class="btn">Shop the Dripper</a>
+        <a href="#catalog" class="btn btn-outline">View catalog</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div id="hero-icon" style="max-width:280px;margin:0 auto;"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="section-head" id="catalog">
+    <h2>The full catalog</h2>
+    <span class="eyebrow">5 instruments</span>
+  </div>
+
+  <div class="catalog-grid" id="catalog-grid"></div>
+
+  <div class="strip" style="margin-left: -32px; margin-right: -32px; width: calc(100% + 64px);">
+    <div class="wrap" style="max-width:none;">
+      <div class="strip-item">
+        <span class="eyebrow">01 — Spec first</span>
+        <h4>Every listing ships with real numbers</h4>
+        <p>Capacity, material, dimensions — on the page, not in a linked PDF.</p>
+      </div>
+      <div class="strip-item">
+        <span class="eyebrow">02 — Made to spec</span>
+        <h4>Small-batch, not mass-batch</h4>
+        <p>Runs are sized to what workshops can actually finish well.</p>
+      </div>
+      <div class="strip-item">
+        <span class="eyebrow">03 — Built to outlast trends</span>
+        <h4>Five instruments, no seasonal drops</h4>
+        <p>The catalog changes when a design earns its place in it.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Contour Coffeeworks — a demo storefront.</span>
+    <span>Static front-end · no real payments processed</span>
+  </div>
+</footer>
+
+<script src="js/icons.js"></script>
+<script src="js/store.js"></script>
+<script>
+  document.getElementById("hero-icon").innerHTML = renderIcon("dripper");
+
+  const grid = document.getElementById("catalog-grid");
+  Object.values(PRODUCTS).forEach(p => {
+    const card = document.createElement("a");
+    card.className = "card";
+    card.href = p.id === "contour-dripper" ? "product.html" : `product.html?id=${p.id}`;
+    card.innerHTML = `
+      <div class="card-art">${renderIcon(p.icon)}</div>
+      <span class="eyebrow">No. ${p.catalogNo}</span>
+      <h3>${p.name}</h3>
+      <p class="desc">${p.desc}</p>
+      <div class="card-foot">
+        <span class="price">${money(p.price)}</span>
+        <span class="card-link">View instrument →</span>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+</script>
+</body>
+</html>
